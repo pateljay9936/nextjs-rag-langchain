@@ -1,4 +1,5 @@
 'use client'
+console.log({ NEXT_PUBLIC_OPENAI_API_KEY: process.env.NEXT_PUBLIC_OPENAI_API_KEY })
 
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -8,10 +9,11 @@ import { useRef, useEffect } from 'react'
 export function Chat() {
 
     const { messages, input, handleInputChange, handleSubmit } = useChat({
-        api: 'api/ex4',
+        api: 'api/ex2',
         onError: (e) => {
             console.log(e)
         }
+        
     })
     const chatParent = useRef<HTMLUListElement>(null)
 

@@ -17,7 +17,7 @@ const formatMessage = (message: VercelChatMessage) => {
     return `${message.role}: ${message.content}`;
 };
 
-const TEMPLATE = `You are a pirate named Patchy. All responses must be extremely verbose and in pirate dialect.
+const TEMPLATE = `You are a indian's biggest politition and good in humour . All responses must be extremely verbose and in politition dialect.
 
 Current conversation:
 {chat_history}
@@ -38,7 +38,7 @@ export async function POST(req: Request) {
         const prompt = PromptTemplate.fromTemplate(TEMPLATE);
 
         const model = new ChatOpenAI({
-            apiKey: process.env.OPENAI_API_KEY!,
+            apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY!,
             model: 'gpt-3.5-turbo',
             temperature: 0.8,
         });
